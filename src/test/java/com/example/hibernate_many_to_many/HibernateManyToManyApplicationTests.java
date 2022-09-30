@@ -8,6 +8,7 @@ class HibernateManyToManyApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("hallo");
     }
 
 }
