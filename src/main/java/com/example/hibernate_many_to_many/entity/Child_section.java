@@ -4,12 +4,11 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-//
-//@Entity
-//@Data
-//public class Child_section {
+
+
+public class Child_section {
 //    @Id
 //    public long child_id;
 //    @Id
 //    private long section_id;
-//}
+}
