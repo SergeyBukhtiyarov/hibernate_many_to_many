@@ -45,7 +45,11 @@ public class AddToDB {
         section4.setName("karate");
 
 
+        section1.addChildToSection(child1);
+        section1.addChildToSection(child2);
 
+
+        sectionRepository.save(section1);
 
 
     }
