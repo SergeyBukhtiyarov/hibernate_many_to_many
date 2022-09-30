@@ -7,8 +7,8 @@ import javax.persistence.Id;
 
 
 public class Child_section {
-//    @Id
-//    public long child_id;
-//    @Id
-//    private long section_id;
+    @Id
+    public long child_id;
+    @Id
+    private long section_id;
 }
