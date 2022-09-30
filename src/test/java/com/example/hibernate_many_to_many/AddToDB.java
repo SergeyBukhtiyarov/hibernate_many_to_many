@@ -47,9 +47,17 @@ public class AddToDB {
 
         section1.addChildToSection(child1);
         section1.addChildToSection(child2);
+       section1.addChildToSection(child3);
+//        section2.addChildToSection(child1);
+//        section2.addChildToSection(child2);
+//        section2.addChildToSection(child3);
+//        section3.addChildToSection(child3);
+//        section4.addChildToSection(child2);
 
 
         sectionRepository.save(section1);
+        sectionRepository.save(section2);
+
 
 
     }
