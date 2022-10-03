@@ -87,7 +87,7 @@ public class AddToDB {
     @Test
     public void deleteSection() {
         System.out.println("delete");
-       sectionRepository.deleteById(1l);
+       sectionRepository.deleteById(2l);
     }
 
 }

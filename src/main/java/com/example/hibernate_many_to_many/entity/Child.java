@@ -5,7 +5,9 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,16 +18,16 @@ public class Child {
     private long id;
     private String name;
     private long age;
-    @EqualsAndHashCode.Exclude
+   // @EqualsAndHashCode.Exclude
     @ToString.Exclude
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.REMOVE})
     @JoinTable(name = "child_section", joinColumns = @JoinColumn(name = "child_id")
             , inverseJoinColumns = @JoinColumn(name = "section_id"))
-    private Set<Section> sectionList;
+    private List<Section> sectionList;
 
     public void addSectionToChild(Section section) {
         if (sectionList == null) {
-            sectionList = new HashSet<>();
+            sectionList = new ArrayList<>();
         }
         sectionList.add(section);
     }
