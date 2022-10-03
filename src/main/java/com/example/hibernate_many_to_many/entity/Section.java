@@ -1,13 +1,11 @@
 package com.example.hibernate_many_to_many.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,16 +16,16 @@ public class Section {
     private long id;
     private String name;
 
-
+    @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinTable(name = "child_section", joinColumns = @JoinColumn(name = "section_id")
-            ,inverseJoinColumns = @JoinColumn(name = "child_id"))
-    private Set <Child> childList;
+            , inverseJoinColumns = @JoinColumn(name = "child_id"))
+    private Set<Child> childList;
 
 
     public void addChildToSection(Child child) {
-        if (childList==null) {
+        if (childList == null) {
             childList = new HashSet<>();
         }
         childList.add(child);
