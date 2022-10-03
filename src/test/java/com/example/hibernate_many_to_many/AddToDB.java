@@ -53,18 +53,33 @@ public class AddToDB {
         section4.setName("karate");
 
         Section section5 = new Section();
-        section4.setName("kung-fu");
+        section5.setName("kung-fu");
+
+        sectionRepository.save(section1);
+        sectionRepository.save(section2);
+        sectionRepository.save(section3);
+        sectionRepository.save(section4);
+        sectionRepository.save(section5);
 
 child1.addSectionToChild(section1);
 child1.addSectionToChild(section2);
 child1.addSectionToChild(section3);
 child1.addSectionToChild(section4);
 child1.addSectionToChild(section5);
-
+child2.addSectionToChild(section1);
+child2.addSectionToChild(section2);
+child2.addSectionToChild(section3);
+child2.addSectionToChild(section4);
+child2.addSectionToChild(section5);
 child3.addSectionToChild(section4);
+child5.addSectionToChild(section4);
+child4.addSectionToChild(section2);
 childRepository.save(child1);
 childRepository.save(child2);
-//childRepository.save(child3);
+childRepository.save(child3);
+childRepository.save(child4);
+childRepository.save(child5);
+
 
 
 

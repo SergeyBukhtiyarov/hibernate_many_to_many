@@ -20,7 +20,7 @@ public class Section {
 
 
     @ToString.Exclude
-    @ManyToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinTable(name = "child_section", joinColumns = @JoinColumn(name = "section_id")
             ,inverseJoinColumns = @JoinColumn(name = "child_id"))
     private Set <Child> childList;

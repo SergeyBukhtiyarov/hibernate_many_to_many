@@ -20,7 +20,7 @@ public class Child {
     private long age;
 
     @ToString.Exclude
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.REMOVE})
     @JoinTable(name = "child_section", joinColumns = @JoinColumn(name = "child_id")
             ,inverseJoinColumns = @JoinColumn(name = "section_id"))
     private Set<Section> sectionList;
